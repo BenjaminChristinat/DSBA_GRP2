@@ -1,0 +1,1 @@
+data/reference/collectors/osm/swiss_microlocation_poi.csv filter=lfs diff=lfs merge=lfs -text
