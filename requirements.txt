@@ -1,7 +1,9 @@
 streamlit
-plotly
 pandas
 numpy
+plotly
+pydeck
 scikit-learn
-joblib
-pyarrow
+shap
+xgboost
+pyproj
