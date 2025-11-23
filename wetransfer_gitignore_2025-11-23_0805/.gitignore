@@ -1,0 +1,5 @@
+# remove these lines or add # in front
+#  data/processed/
+# models/
+# *.parquet
+# *.csv
