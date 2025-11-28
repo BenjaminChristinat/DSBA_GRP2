@@ -31,7 +31,7 @@ col1, col2 = st.columns([1, 1])
 with col1:
     # Link to the first page, assuming the file is now named '1_Market_Analysis.py'
     st.page_link(
-        "pages/1_pages_location.py", 
+        "pages/1_Market_Analysis.py", 
         label="📊 Start Market Analysis", 
         icon="🔍",
         # Use type="primary" to make this button stand out
@@ -42,7 +42,7 @@ with col1:
 with col2:
     # Link to the second page, assuming the file is now named '2_Location_Finder.py'
     st.page_link(
-        "pages/2_test_concpet.py", 
+        "pages/2_Location_Finder.py", 
         label="📍 Predict Success for a Location", 
         icon="🚀",
         type="secondary"
