@@ -30,10 +30,10 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     # Link to the first page, assuming the file is now named '1_Market_Analysis.py'
-    st.button(
-        st.link_button("pages/1_Market_Analysis.py")
-    )
-    st.caption("Deep Market Analysis")
+    if st.button("📍 LOCATION FINDER", use_container_width=True):
+        # Use st.switch_page() to manually redirect when clicked
+        st.switch_page("pages/2_Location_Finder.py")
+    st.caption("Get a machine learning prediction for a new site.")
 with col2:
     # Link to the second page, assuming the file is now named '2_Location_Finder.py'
     if st.button("📍 LOCATION FINDER", use_container_width=True):
