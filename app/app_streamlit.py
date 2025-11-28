@@ -26,20 +26,22 @@ This application offers two main services to guide your decision-making:
 # We will use st.page_link to create prominent buttons in the main view for better visibility.
 
 # Use st.columns for better button layout
-col1, col2 = st.columns([1, 1])
+col1, col2 = st.columns(2)
 
+# Button 1: Market Analysis
 with col1:
-    # Link to the first page, assuming the file is now named '1_Market_Analysis.py'
-    if st.button("📍 LOCATION FINDER", use_container_width=True):
+    # ADDED: unique key="market_btn"
+    if st.button("📊 MARKET ANALYSIS", use_container_width=True, key="market_btn"):
         # Use st.switch_page() to manually redirect when clicked
-        st.switch_page("pages/2_Location_Finder.py")
-    st.caption("Get a machine learning prediction for a new site.")
-with col2:
-    # Link to the second page, assuming the file is now named '2_Location_Finder.py'
-    if st.button("📍 LOCATION FINDER", use_container_width=True):
-        # Use st.switch_page() to manually redirect when clicked
-        st.switch_page("pages/2_Location_Finder.py")
-    st.caption("Get a machine learning prediction for a new site.")
+        st.switch_page("pages/1_Market_Analysis.py")
+    st.caption("Review historical data, competition, and trends.")
 
+# Button 2: Location Finder
+with col2:
+    # ADDED: unique key="location_btn"
+    if st.button("📍 LOCATION FINDER", use_container_width=True, key="location_btn"):
+        # Use st.switch_page() to manually redirect when clicked
+        st.switch_page("pages/2_Location_Finder.py")
+    st.caption("Get a machine learning prediction for a new site.")
 st.divider()
 st.caption("You can also navigate using the sidebar on the left.")
