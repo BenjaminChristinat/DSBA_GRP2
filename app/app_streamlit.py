@@ -50,5 +50,3 @@ with col2:
     st.caption("Get a machine learning prediction for a new site.")
 
 st.divider()
-
-st.info("The original prediction logic and data loading have been moved to the respective new pages, focusing this main page purely on orientation and navigation.")

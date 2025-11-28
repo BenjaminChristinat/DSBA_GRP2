@@ -111,7 +111,7 @@ if st.button("Find Spots", type="primary"):
     df['final_score'] = np.exp(df['log_score'])
     
     # Scale to 0-100
-    df['Chance of Success'] = (df['final_score'] / df['final_score'].max() * 100).fillna(0).round(1)
+    df['Suitability'] = (df['final_score'] / df['final_score'].max() * 100).fillna(0).round(1)
 
     # --- 3. OUTPUTS ---
     transformer = Transformer.from_crs("EPSG:2056", "EPSG:4326", always_xy=True)
@@ -125,7 +125,7 @@ if st.button("Find Spots", type="primary"):
     
     # MAP
     fig = px.scatter_mapbox(
-        top_spots, lat="latitude", lon="longitude", color="Chance of Success", size="Chance of Success",
+        top_spots, lat="latitude", lon="longitude", color="Suitability", size="Suitability",
         color_continuous_scale="RdYlGn", hover_name="Chance of Success", 
         hover_data={"latitude": False, "longitude": False, "dist_station_m": ":.0f", "comp_count_500m": True},
         zoom=13, mapbox_style="carto-positron", height=600
