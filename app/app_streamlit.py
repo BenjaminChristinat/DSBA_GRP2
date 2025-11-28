@@ -30,20 +30,33 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     # Link to the first page, assuming the file is now named '1_Market_Analysis.py'
-    st.page_link(
-        "pages/1_Market_Analysis.py", 
-        label="📊 Start Market Analysis", 
-        icon="🔍",
+    st.container(border=True, height=150).markdown(
+        f"""
+        ### 📊 **Market Analysis**
+        
+        {st.page_link(
+            "pages/1_Market_Analysis.py", 
+            label="👉 **Explore Historical Data**", 
+            icon="🔍"
+        )}
+        
+        _Understand competition and trends._
+        """
     )
-    st.caption("Explore historical data, competition, and trends.")
-
 with col2:
     # Link to the second page, assuming the file is now named '2_Location_Finder.py'
-    st.page_link(
-        "pages/2_Location_Finder.py", 
-        label="📍 Predict Success for a Location", 
-        icon="🚀",
+    st.container(border=True, height=150).markdown(
+        f"""
+        ### 📍 **Location Finder**
+        
+        {st.page_link(
+            "pages/2_Location_Finder.py", 
+            label="👉 **Predict Success Score**", 
+            icon="🚀"
+        )}
+        
+        _Get a machine learning prediction for a new site._
+        """
     )
-    st.caption("Get a machine learning prediction for a new site.")
-
 st.divider()
+st.caption("You can also navigate using the sidebar on the left.")
