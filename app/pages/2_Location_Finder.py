@@ -126,7 +126,7 @@ if st.button("Find Spots", type="primary"):
     # MAP
     fig = px.scatter_mapbox(
         top_spots, lat="latitude", lon="longitude", color="Suitability", size="Suitability",
-        color_continuous_scale="RdYlGn", hover_name="Chance of Success", 
+        color_continuous_scale="RdYlGn", hover_name="Suitability", 
         hover_data={"latitude": False, "longitude": False, "dist_station_m": ":.0f", "comp_count_500m": True},
         zoom=13, mapbox_style="carto-positron", height=600
     )
@@ -138,12 +138,12 @@ if st.button("Find Spots", type="primary"):
     display_df['Maps'] = [f"http://maps.google.com/?q={lat},{lon}" for lat, lon in zip(display_df['latitude'], display_df['longitude'])]
     
     st.data_editor(
-        display_df[['Chance of Success', 'dist_station_m', 'comp_count_500m', 'Maps']],
+        display_df[['Suitability', 'dist_station_m', 'comp_count_500m', 'Maps']],
         column_config={
             "Maps": st.column_config.LinkColumn("Link"),
             "dist_station_m": st.column_config.NumberColumn("Dist. Train (m)", format="%.0f"),
             "comp_count_500m": st.column_config.NumberColumn("Competitors (500m)"),
-            "Chance of Success": st.column_config.ProgressColumn("Chance of Success", format="%.1f%%", min_value=0, max_value=100)
+            "Suitability": st.column_config.ProgressColumn("Suitability", format="%.1f%%", min_value=0, max_value=100)
         },
         hide_index=True
     )
