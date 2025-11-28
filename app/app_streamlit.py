@@ -34,8 +34,6 @@ with col1:
         "pages/1_Market_Analysis.py", 
         label="📊 Start Market Analysis", 
         icon="🔍",
-        # Use type="primary" to make this button stand out
-        type="primary" 
     )
     st.caption("Explore historical data, competition, and trends.")
 
@@ -45,7 +43,6 @@ with col2:
         "pages/2_Location_Finder.py", 
         label="📍 Predict Success for a Location", 
         icon="🚀",
-        type="secondary"
     )
     st.caption("Get a machine learning prediction for a new site.")
 
